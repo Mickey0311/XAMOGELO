@@ -116,37 +116,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="feature-section" id="academie">
-        <div className="container feature-grid">
-          <div className="feature-copy">
-            <div className="eyebrow">Xamogelo Académie</div>
-            <h2>Des compétences pratiques pour passer à l’action.</h2>
-            <p>Des formations en présentiel, à distance ou hybrides, conçues pour les particuliers, entrepreneurs, équipes et institutions.</p>
-            <ul>
-              <li>Compétences métiers et outils numériques</li>
-              <li>Communication, marketing et personal branding</li>
-              <li>Management, leadership, musique et audiovisuel</li>
-            </ul>
-            <a className="button button-accent" href="/academie">Découvrir l’Académie ↗</a>
-          </div>
-          <div className="feature-panel" aria-hidden="true">
-            <span>APPRENDRE</span><span>PRATIQUER</span><span>PROGRESSER</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="section studio-section" id="studio">
-        <div className="container studio-grid">
-          <div className="studio-art" aria-hidden="true"><span>REC</span><div className="studio-orbit" /></div>
-          <div className="section-heading studio-copy">
-            <div className="eyebrow">Xamogelo Studio</div>
-            <h2>Donner une forme forte à vos idées.</h2>
-            <p>Production de podcasts, photos, vidéos et contenus audiovisuels pour raconter, transmettre et valoriser votre projet.</p>
-            <a className="text-link" href="/studio">Découvrir le Studio ↗</a>
-          </div>
-        </div>
-      </section>
-
       <section className="section values-section" id="valeurs">
         <div className="container why-grid">
           <div className="section-heading">

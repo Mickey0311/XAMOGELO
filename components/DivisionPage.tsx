@@ -27,31 +27,6 @@ export default function DivisionPage({ division }: { division: Division }) {
         </div>
       </section>
 
-      <section className="section division-services">
-        <div className="container">
-          <div className="section-heading"><div className="eyebrow">Services principaux</div><h2>Un accompagnement concret et adapté au besoin.</h2></div>
-          <div className="service-detail-grid">
-            {division.services.map((service, index) => (
-              <article key={service.title}><span>0{index + 1}</span><h3>{service.title}</h3><p>{service.description}</p></article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section division-audience">
-        <div className="container audience-grid">
-          <div className="section-heading"><div className="eyebrow">Pour qui ?</div><h2>Des solutions pour les personnes comme pour les organisations.</h2></div>
-          <div className="audience-list">{division.audiences.map((audience) => <span key={audience}>{audience}</span>)}</div>
-        </div>
-      </section>
-
-      <section className="section division-formats">
-        <div className="container format-grid">
-          <div><div className="eyebrow">Formats disponibles</div><h2>Choisir le niveau d’accompagnement approprié.</h2></div>
-          <ol>{division.formats.map((format) => <li key={format}>{format}</li>)}</ol>
-        </div>
-      </section>
-
       <section className="section division-journey-role">
         <div className="container role-card">
           <div className="eyebrow">Dans le parcours Xamogelo</div>
