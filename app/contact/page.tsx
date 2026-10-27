@@ -18,7 +18,7 @@ export default function ContactPage({ searchParams }: { searchParams: { service?
   return (
     <main className="site-shell contact-page" id="top">
       <SiteHeader />
-      <section className="contact-page-hero">
+      <section className="contact-page-hero" id="page-content" tabIndex={-1}>
         <div className="container"><div className="eyebrow">Contact Xamogelo</div><h1>Parlons de votre prochain objectif.</h1><p>Décrivez votre besoin. Nous vous orienterons vers la division et le format d’accompagnement les plus adaptés.</p></div>
       </section>
       <section className="section contact-page-content">

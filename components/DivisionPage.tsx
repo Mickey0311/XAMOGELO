@@ -1,22 +1,24 @@
 import type { Division } from "../lib/divisions";
 import SiteFooter from "./SiteFooter";
 import SiteHeader from "./SiteHeader";
+import { sectorVisuals } from "../lib/sector-visuals";
 
 export default function DivisionPage({ division }: { division: Division }) {
   return (
     <main className={`site-shell division-page page-${division.slug}`} id="top" style={{ "--division-accent": division.accent } as React.CSSProperties}>
       <SiteHeader />
 
-      <section className="division-hero">
+      <section className="division-hero" id="page-content" tabIndex={-1}>
         <div className="container division-hero-grid">
           <div>
+            <nav className="breadcrumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><a href="/#divisions">Nos pôles</a><span aria-hidden="true">/</span><span aria-current="page">{division.shortName}</span></nav>
             <div className="eyebrow">Division {division.index} · Xamogelo</div>
             <h1>{division.shortName}</h1>
             <p className="division-hero-promise">{division.promise}</p>
             <p className="division-hero-summary">{division.summary}</p>
             <a className="button division-button" href="/contact">Échanger avec notre équipe ↗</a>
           </div>
-          <div className="division-hero-art" aria-hidden="true"><span>{division.index}</span><strong>{division.shortName.charAt(0)}</strong></div>
+          <div className="division-hero-art sector-detail-photo" style={{ "--sector-position": sectorVisuals[division.slug].position } as React.CSSProperties} aria-hidden="true"><span>Pôle {division.index}</span><div><small>{sectorVisuals[division.slug].keywords}</small><strong>{sectorVisuals[division.slug].action}</strong></div></div>
         </div>
       </section>
 

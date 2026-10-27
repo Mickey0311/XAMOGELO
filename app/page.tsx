@@ -1,6 +1,7 @@
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import { divisions } from "../lib/divisions";
+import { sectorVisuals } from "../lib/sector-visuals";
 
 const journey = [
   ["Diagnostic", "Comprendre votre réalité, vos objectifs et vos contraintes."],
@@ -30,26 +31,23 @@ export default function Home() {
     <main className="site-shell" id="top">
       <SiteHeader />
 
-      <section className="hero" id="accueil">
+      <section className="hero" id="accueil" tabIndex={-1}>
         <div className="container hero-layout">
           <div className="hero-content">
-            <div className="eyebrow">Conseil · Formation · Marketing · Digital · Studio</div>
-            <h1>Vos ambitions,<br /><em>notre écosystème.</em></h1>
+            <div className="eyebrow">Xamogelo · Un groupe, cinq expertises</div>
+            <h1>De la vision<br /><em>à la réalisation.</em></h1>
             <p className="hero-lead">Nous aidons les personnes et les organisations à structurer leurs projets, développer leurs compétences, construire leur marque et amplifier leur impact.</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#divisions">Explorer nos cinq pôles ↘</a>
-              <a className="button button-ghost" href="/contact">Démarrer un projet</a>
+              <a className="button button-primary" href="/contact">Parlons de votre projet <span aria-hidden="true">↗</span></a>
+              <a className="button button-ghost" href="#divisions">Découvrir nos pôles <span aria-hidden="true">↓</span></a>
             </div>
             <div className="hero-note"><span><i className="dot" /> Solutions intégrées</span><span><i className="dot" /> Formats modulaires</span><span><i className="dot" /> Accompagnement humain</span></div>
           </div>
-          <aside className="hero-card" aria-label="Méthode Xamogelo">
-            <div className="hero-card-label">Notre méthode</div>
-            <div className="hero-step"><span>01</span><strong>Diagnostiquer</strong><small>Écouter et comprendre.</small></div>
-            <div className="hero-step"><span>02</span><strong>Construire</strong><small>Proposer une trajectoire.</small></div>
-            <div className="hero-step"><span>03</span><strong>Activer</strong><small>Réaliser, valider et suivre.</small></div>
-            <div className="hero-card-line" />
-          </aside>
         </div>
+        <nav className="container hero-poles" aria-label="Découvrir les cinq pôles">
+          {divisions.map((division) => <a className="sector-preview" key={division.slug} href={`/${division.slug}`} style={{ "--sector-position": sectorVisuals[division.slug].position } as React.CSSProperties}><span className="sector-photo" aria-hidden="true" /><span className="sector-number">{division.index}</span><span className="sector-caption"><small>{sectorVisuals[division.slug].action}</small><strong>{division.shortName}</strong></span><b aria-hidden="true">↗</b></a>)}
+        </nav>
+        <p className="visual-note container">Cinq métiers, une même ambition : faire avancer votre projet.</p>
       </section>
 
       <div className="ticker" aria-label="Expertises Xamogelo">
@@ -83,10 +81,11 @@ export default function Home() {
           <div className="division-grid">
             {divisions.map((division) => (
               <a className={`division-card division-${division.slug}`} href={`/${division.slug}`} key={division.name}>
-                <div className="division-visual" aria-hidden="true"><span>{division.index}</span><b>{division.shortName.charAt(0)}</b></div>
+                <div className="division-visual sector-card-photo" style={{ "--sector-position": sectorVisuals[division.slug].position } as React.CSSProperties} aria-hidden="true"><span>PÔLE {division.index}</span><b>{sectorVisuals[division.slug].action}</b></div>
                 <div className="division-content">
                   <span className="division-index">{division.index}</span>
                   <h3>{division.name}</h3>
+                  <div className="sector-keywords">{sectorVisuals[division.slug].keywords}</div>
                   <strong>{division.promise}</strong>
                   <p>{division.summary}</p>
                   <span className="division-link">Découvrir ce pôle <b>↗</b></span>
@@ -139,7 +138,7 @@ export default function Home() {
           </div>
           <div className="offer-grid">
             {offers.map(([title, description]) => (
-              <article className="offer" key={title}><div><h3>{title}</h3><p>{description}</p></div><a href="/contact" aria-label={`Demander l’offre ${title}`}>↗</a></article>
+              <article className="offer" key={title}><div><h3>{title}</h3><p>{description}</p></div><a href="/contact" aria-label={`Demander l’offre ${title}`}>En discuter <span aria-hidden="true">↗</span></a></article>
             ))}
           </div>
         </div>
