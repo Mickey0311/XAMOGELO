@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "../../components/ContactForm";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
+import InteractiveBackground from "../../components/InteractiveBackground";
 
 export const metadata: Metadata = {
   title: "Contact — Xamogelo",
@@ -19,12 +20,13 @@ export default function ContactPage({ searchParams }: { searchParams: { service?
     <main className="site-shell contact-page" id="top">
       <SiteHeader />
       <section className="contact-page-hero" id="page-content" tabIndex={-1}>
-        <div className="container"><div className="eyebrow">Contact Xamogelo</div><h1>Parlons de votre prochain objectif.</h1><p>Décrivez votre besoin. Nous vous orienterons vers la division et le format d’accompagnement les plus adaptés.</p></div>
+        <InteractiveBackground />
+        <div className="container"><div className="eyebrow">Contact Xamogelo</div><h1>Parlons de votre projet.</h1><p>Décrivez votre besoin. Nous vous aiderons à trouver le bon accompagnement.</p></div>
       </section>
       <section className="section contact-page-content">
         <div className="container contact-grid">
           <div>
-            <div className="section-heading"><div className="eyebrow">Toutes nos coordonnées</div><h2>Choisissez le canal qui vous convient.</h2></div>
+            <div className="section-heading"><div className="eyebrow">Nos coordonnées</div><h2>Restons en contact.</h2></div>
             <div className="contact-directory">
               <article><small>Email</small><a href="mailto:contact@xamogelo.ma">contact@xamogelo.ma</a><p>Adresse de contact indiquée dans la première plaquette, à confirmer avant publication.</p></article>
               <article><small>Téléphone</small><span>À compléter</span><p>Le numéro définitif n’est pas encore confirmé.</p></article>

@@ -2,6 +2,7 @@ import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import { divisions } from "../lib/divisions";
 import { sectorVisuals } from "../lib/sector-visuals";
+import InteractiveBackground from "../components/InteractiveBackground";
 
 const journey = [
   ["Diagnostic", "Comprendre votre réalité, vos objectifs et vos contraintes."],
@@ -32,11 +33,12 @@ export default function Home() {
       <SiteHeader />
 
       <section className="hero" id="accueil" tabIndex={-1}>
+        <InteractiveBackground />
         <div className="container hero-layout">
           <div className="hero-content">
             <div className="eyebrow">Xamogelo · Un groupe, cinq expertises</div>
             <h1>De la vision<br /><em>à la réalisation.</em></h1>
-            <p className="hero-lead">Nous aidons les personnes et les organisations à structurer leurs projets, développer leurs compétences, construire leur marque et amplifier leur impact.</p>
+            <p className="hero-lead">Conseil, formation, création et digital pour faire avancer vos projets.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="/contact">Parlons de votre projet <span aria-hidden="true">↗</span></a>
               <a className="button button-ghost" href="#divisions">Découvrir nos pôles <span aria-hidden="true">↓</span></a>
@@ -60,13 +62,13 @@ export default function Home() {
         <div className="container intro-grid">
           <div className="section-heading intro-copy">
             <div className="eyebrow">Notre raison d’être</div>
-            <h2>Faire progresser les idées, les compétences et les organisations.</h2>
-            <p>Xamogelo délivre des conseils, des compétences et des outils pratiques pour développer la visibilité, les capacités et l’impact de ses clients.</p>
+            <h2>Faire avancer vos ambitions.</h2>
+            <p>Nous accompagnons les personnes et les organisations, de la stratégie à la mise en œuvre.</p>
           </div>
           <div className="signature">
             <div className="signature-mark">Vision & mission</div>
-            <h3>Des solutions complètes, accessibles et innovantes.</h3>
-            <p>Conseiller, former et accompagner avec des stratégies opérationnelles, des formations pratiques, des solutions digitales et de la production média.</p>
+            <h3>Cinq expertises. Une même vision.</h3>
+            <p>Les bonnes compétences, les bons outils et un accompagnement adapté à votre projet.</p>
           </div>
         </div>
       </section>
@@ -75,8 +77,8 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <div className="eyebrow">Un groupe, cinq divisions</div>
-            <h2>Une expertise connectée à chaque étape de votre projet.</h2>
-            <p>Chaque pôle peut intervenir séparément ou s’intégrer dans un accompagnement global.</p>
+            <h2>À chaque besoin, son expertise.</h2>
+            <p>Un pôle dédié ou un accompagnement global : à vous de choisir.</p>
           </div>
           <div className="division-grid">
             {divisions.map((division) => (
@@ -86,8 +88,7 @@ export default function Home() {
                   <span className="division-index">{division.index}</span>
                   <h3>{division.name}</h3>
                   <div className="sector-keywords">{sectorVisuals[division.slug].keywords}</div>
-                  <strong>{division.promise}</strong>
-                  <p>{division.summary}</p>
+                  <p>{division.promise}</p>
                   <span className="division-link">Découvrir ce pôle <b>↗</b></span>
                 </div>
               </a>
@@ -100,8 +101,8 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <div className="eyebrow">Le parcours Xamogelo</div>
-            <h2>Du premier diagnostic à un impact qui dure.</h2>
-            <p>Un même client peut mobiliser l’ensemble de l’écosystème, avec un interlocuteur et une trajectoire cohérente.</p>
+            <h2>De l’idée à l’action.</h2>
+            <p>Six étapes, un accompagnement cohérent.</p>
           </div>
           <div className="journey-grid">
             {journey.map(([title, description], index) => (
@@ -119,7 +120,7 @@ export default function Home() {
         <div className="container why-grid">
           <div className="section-heading">
             <div className="eyebrow">Nos engagements</div>
-            <h2>Une relation professionnelle, créative et profondément humaine.</h2>
+            <h2>L’exigence, avec l’humain.</h2>
           </div>
           <div className="reason-list">
             {values.map(([title, description], index) => (
@@ -133,8 +134,8 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <div className="eyebrow">Offres signatures</div>
-            <h2>Une formule adaptée à votre prochaine étape.</h2>
-            <p>À l’unité, en pack mensuel ou sur mesure : l’accompagnement s’adapte à votre réalité.</p>
+            <h2>Le bon format pour avancer.</h2>
+            <p>À l’unité, au mois ou sur mesure.</p>
           </div>
           <div className="offer-grid">
             {offers.map(([title, description]) => (
@@ -145,7 +146,7 @@ export default function Home() {
       </section>
 
       <section className="home-contact-cta">
-        <div className="container"><div className="eyebrow">Un projet, une formation ou un besoin média ?</div><h2>Identifions ensemble le bon point de départ.</h2><p>L’équipe Xamogelo vous orientera vers la division et le format les plus adaptés.</p><a className="button button-accent" href="/contact">Contacter Xamogelo ↗</a></div>
+        <div className="container"><div className="eyebrow">Et si on en parlait ?</div><h2>Votre projet commence ici.</h2><p>Partagez votre idée. Construisons la suite ensemble.</p><a className="button button-accent" href="/contact">Contacter Xamogelo ↗</a></div>
       </section>
 
       <SiteFooter />

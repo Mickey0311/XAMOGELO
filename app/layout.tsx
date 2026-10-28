@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import InteractiveCursor from "../components/InteractiveCursor";
 import "./globals.css";
 import "./refinement.css";
 import "./sectors.css";
@@ -33,7 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <script dangerouslySetInnerHTML={{ __html: `try { const t = localStorage.getItem('xamogelo-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}` }} />
       </head>
-      <body>{children}</body>
+      <body>{children}<InteractiveCursor /></body>
     </html>
   );
 }

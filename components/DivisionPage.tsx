@@ -2,6 +2,7 @@ import type { Division } from "../lib/divisions";
 import SiteFooter from "./SiteFooter";
 import SiteHeader from "./SiteHeader";
 import { sectorVisuals } from "../lib/sector-visuals";
+import InteractiveBackground from "./InteractiveBackground";
 
 export default function DivisionPage({ division }: { division: Division }) {
   return (
@@ -9,6 +10,7 @@ export default function DivisionPage({ division }: { division: Division }) {
       <SiteHeader />
 
       <section className="division-hero" id="page-content" tabIndex={-1}>
+        <InteractiveBackground />
         <div className="container division-hero-grid">
           <div>
             <nav className="breadcrumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><a href="/#divisions">Nos pôles</a><span aria-hidden="true">/</span><span aria-current="page">{division.shortName}</span></nav>
@@ -24,7 +26,7 @@ export default function DivisionPage({ division }: { division: Division }) {
 
       <section className="section division-intro">
         <div className="container division-intro-grid">
-          <div><div className="eyebrow">Ce qu’est ce pôle</div><h2>{division.definition}</h2></div>
+          <div><div className="eyebrow">Notre rôle</div><h2>{sectorVisuals[division.slug].action}</h2><p className="division-definition">{division.definition}</p></div>
           <aside><small>Sa raison d’être</small><p>{division.purpose}</p></aside>
         </div>
       </section>
@@ -40,8 +42,8 @@ export default function DivisionPage({ division }: { division: Division }) {
       <section className="division-final-cta">
         <div className="container">
           <div className="eyebrow">Votre projet</div>
-          <h2>Vous avez un besoin lié à {division.name} ?</h2>
-          <p>Présentez-nous votre objectif. L’équipe Xamogelo vous orientera vers la formule la plus adaptée.</p>
+          <h2>Parlons de votre projet.</h2>
+          <p>Un besoin en {division.shortName} ? Trouvons le bon accompagnement.</p>
           <a className="button button-accent" href={`/contact?service=${encodeURIComponent(division.shortName)}`}>Contacter Xamogelo ↗</a>
         </div>
       </section>
